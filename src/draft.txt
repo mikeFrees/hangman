@@ -1,0 +1,15 @@
+//Pages
+main menu
+how to page
+category page
+ game page
+ pause menu
+  pause state
+  win state
+  lose state
+
+routes
+/home
+/howto
+/category
+/game

@@ -1,7 +1,11 @@
+import AppRoutes from "./routes/AppRoutes";
 import "./App.css";
+import GameProvider from "./context/GameContext";
 
-function App() {
-  return <h1>I am under construction!</h1>;
+export default function App() {
+  return (
+    <GameProvider>
+      <AppRoutes />
+    </GameProvider>
+  );
 }
-
-export default App;
