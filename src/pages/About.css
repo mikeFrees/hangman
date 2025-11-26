@@ -1,0 +1,20 @@
+.button--menu__back {
+  width: 94px;
+  height: 94px;
+  background: linear-gradient(180deg, #fe71fe 0%, #7199ff 100%);
+  box-shadow: inset 0px -4px 0px 1px #243041,
+    inset 0px -6px 0px 7px rgba(157, 45, 245, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header--howto {
+  line-height: 1.2;
+  letter-spacing: -0.5%;
+  font-size: 136px;
+  background: linear-gradient(180deg, #67b6ff 0%, #fff 100%);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 8px #243041;
+}
