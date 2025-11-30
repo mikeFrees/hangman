@@ -1,3 +1,18 @@
+article {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 4, 58, 0.75) 0%,
+    rgba(21, 18, 120, 0.75) 70%,
+    rgba(43, 22, 119, 0.75) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .button--menu__back {
   width: 94px;
   height: 94px;
@@ -9,12 +24,35 @@
   align-items: center;
 }
 
+.main--howto {
+  width: 80%;
+  display: flex;
+  gap: 32px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header--howto {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header--howto h1 {
+  margin: 0;
+  margin-bottom: 64px;
+  margin-right: 38%;
   line-height: 1.2;
-  letter-spacing: -0.5%;
+  letter-spacing: -0.05em;
   font-size: 136px;
   background: linear-gradient(180deg, #67b6ff 0%, #fff 100%);
   background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 8px #243041;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #243041;
+  width: max-content;
 }

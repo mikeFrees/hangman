@@ -1,0 +1,48 @@
+.how-to-card {
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 384px;
+  height: 550px;
+  border-radius: 40px;
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.how-to-card h2 {
+  color: #2463ff;
+  font-size: 88px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-family: 'Mouse Memoirs';
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.how-to-card h3 {
+  color: #261676;
+  width: max-content;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  font-family: 'Mouse Memoirs';
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+}
+
+.how-to-card p {
+  color: #887DC0;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  font-family: 'Mouse Memoirs';
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+}

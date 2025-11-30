@@ -5,14 +5,14 @@ import IconBack from '../assets/images/icon-back.svg?react';
 
 function About() {
   return (
-    <>
-      <header>
+    <article>
+      <header className="header--howto">
         <Link className="button--menu button--menu__back" to="/">
           <IconBack />
         </Link>
-        <h1 className="header--howto"> How to Play</h1>
+        <h1> How to Play</h1>
       </header>
-      <main>
+      <main className="main--howto">
         <HowToCard
           step="01"
           title="Choose a category"
@@ -35,7 +35,7 @@ function About() {
   the word, you lose."
         />
       </main>
-    </>
+    </article>
   );
 }
 
