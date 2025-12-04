@@ -1,7 +1,7 @@
-import "./Game.css";
-import Menu from "../components/layout/Menu";
-import { useState, useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import './Game.css';
+import Menu from '../components/layout/Menu';
+import { useState, useContext } from 'react';
+import { GameContext } from '../context/GameContext';
 
 function Game() {
   const {
@@ -19,7 +19,7 @@ function Game() {
   return (
     <>
       <h2>{status}</h2>
-      {menuEnabled ? <Menu disableMenu={disableMenu} /> : ""}
+      {menuEnabled ? <Menu disableMenu={disableMenu} /> : ''}
       <p>I am Game! </p>
       <button onClick={enableMenu}>menu</button>
     </>
@@ -27,12 +27,12 @@ function Game() {
 
   function enableMenu() {
     setMenuEnabled(true);
-    setStatus("Paused");
+    setStatus('paused');
   }
 
   function disableMenu() {
     setMenuEnabled(false);
-    setStatus("Playing");
+    setStatus('playing');
   }
 }
 
