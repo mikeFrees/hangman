@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-function Menu({disableMenu}) {
+function Menu({toggleMenu}) {
   return (
     <nav>
-      <button onClick = {disableMenu}>Game</button>
+      <button onClick = {toggleMenu}>Game</button>
       <Link to='/category'>Category</Link>
       <Link to='/'>Home</Link>
     </nav>

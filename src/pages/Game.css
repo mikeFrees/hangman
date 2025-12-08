@@ -1,0 +1,14 @@
+.game--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1216px;
+  height: 106px;
+
+  & h1 {
+    color: white;
+    line-height: 120%;
+    font-size: 88px;
+    font-weight: 400;
+  }
+}

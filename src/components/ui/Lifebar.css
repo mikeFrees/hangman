@@ -1,0 +1,26 @@
+.lifebar {
+  box-sizing: border-box;
+  width: 240px;
+  height: 31px;
+  border-radius: 96px;
+  padding: 9px 11px;
+  background: #fff;
+}
+
+.lifebar--life {
+  box-sizing: border-box;
+  width: calc(var(--life) * 21.8px);
+  height: 13px;
+  border-radius: 96px;
+  background: #261676;
+}
+
+
+.lifebar--container {
+  box-sizing: border-box;
+  width: 334px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
