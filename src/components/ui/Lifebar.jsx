@@ -1,7 +1,7 @@
 import HeartIcon from '../../assets/images/icon-heart.svg?react';
 import './Lifebar.css';
 
-function Menu({ life }) {
+function Lifebar({ life }) {
   return (
     <div className="lifebar--container">
       <div className="lifebar">
@@ -12,4 +12,4 @@ function Menu({ life }) {
   );
 }
 
-export default Menu;
+export default Lifebar;

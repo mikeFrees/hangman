@@ -1,6 +1,7 @@
 import './Game.css';
 import Menu from '../components/layout/Menu';
 import Lifebar from '../components/ui/Lifebar';
+import Word from '../components/ui/Word';
 import { useState, useContext, useEffect } from 'react';
 import { GameContext } from '../context/GameContext';
 import data from '../assets/data.json';
@@ -48,7 +49,7 @@ function Game() {
         <Lifebar life={attemptsLeft} />
       </header>
 
-      <p>{word}</p>
+      {word && <Word />}
       <p>keyboard</p>
       {menuEnabled ? <Menu toggleMenu={toggleMenu} /> : ''}
     </>
