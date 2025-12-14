@@ -2,6 +2,7 @@ import './Game.css';
 import Menu from '../components/layout/Menu';
 import Lifebar from '../components/ui/Lifebar';
 import Word from '../components/ui/Word';
+import Keyboard from '../components/ui/KeyBoard';
 import { useState, useContext, useEffect } from 'react';
 import { GameContext } from '../context/GameContext';
 import data from '../assets/data.json';
@@ -50,7 +51,7 @@ function Game() {
       </header>
 
       {word && <Word />}
-      <p>keyboard</p>
+      <Keyboard />
       {menuEnabled ? <Menu toggleMenu={toggleMenu} /> : ''}
     </>
   );

@@ -1,0 +1,31 @@
+.keyboard {
+  width: 1173px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+
+.keyboard--key {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 109px;
+  height: 84px;
+  border-radius: 24px;
+  background-color: #fff;
+  color: #261676;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 120%;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.disabled {
+  opacity: 0.25;
+}
