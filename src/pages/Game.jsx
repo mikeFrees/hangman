@@ -2,7 +2,7 @@ import './Game.css';
 import Menu from '../components/layout/Menu';
 import Lifebar from '../components/ui/Lifebar';
 import Word from '../components/ui/Word';
-import Keyboard from '../components/ui/KeyBoard';
+import Keyboard from '../components/ui/Keyboard';
 import { useState, useContext, useEffect } from 'react';
 import { GameContext } from '../context/GameContext';
 import data from '../assets/data.json';
@@ -12,7 +12,6 @@ function Game() {
   const {
     word,
     setWord,
-    status,
     setStatus,
     attemptsLeft,
     setAttemptsLeft,
@@ -36,6 +35,16 @@ function Game() {
       setNewGame(false);
     }
   }, [category]);
+
+  useEffect(() => {
+    if (guessedLetters.length === 0) return;
+
+    const lastGuess = guessedLetters[guessedLetters.length - 1];
+
+    if (!word.includes(lastGuess)) {
+      setAttemptsLeft((prev) => prev - 1);
+    }
+  }, [guessedLetters, word]);
 
   return (
     <>
@@ -74,7 +83,7 @@ function Game() {
     const randomIndex = Math.floor(Math.random() * available.length);
     const chosen = available[randomIndex];
     setUsedWords([...usedWords, chosen.name]);
-    return chosen.name;
+    return chosen.name.toLowerCase();
   }
 }
 

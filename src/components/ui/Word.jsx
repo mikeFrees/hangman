@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { GameContext } from '../../context/GameContext';
 
 function Word() {
-  const { word } = useContext(GameContext);
+  const { word, guessedLetters,} = useContext(GameContext);
 
   if (!word) return null;
 
@@ -12,7 +12,10 @@ function Word() {
   const wordToGuess = words.map((part, partIndex) => (
     <div key={partIndex} className="word-part">
       {part.split('').map((letter, letterIndex) => (
-        <div key={letterIndex} className="letter hidden">
+        <div
+          key={letterIndex}
+          className={checkLetter(letter) ? 'letter hidden' : 'letter'}
+        >
           {letter}
         </div>
       ))}
@@ -20,6 +23,11 @@ function Word() {
   ));
 
   return <div className="word-container">{wordToGuess}</div>;
+
+  function checkLetter(letter) {
+    if (guessedLetters.includes(letter)) return false;
+    else return true;
+  }
 }
 
 export default Word;
