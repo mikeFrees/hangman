@@ -1,35 +1,39 @@
 import './Keyboard.css';
 import Key from './key';
+import { useEffect, useContext } from 'react';
+import { GameContext } from '../../context/GameContext';
 
 function Keyboard() {
+  const { attemptsLeft, setGuessedLetters } =
+    useContext(GameContext);
+
+  function submitLetter(letter) {
+    if (attemptsLeft <= 0) return;
+
+    setGuessedLetters((prev) => {
+      if (prev.includes(letter)) return prev;
+      return [...prev, letter];
+    });
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      const key = event.key.toLowerCase();
+
+      if (key.length !== 1 || key < 'a' || key > 'z') return;
+
+      submitLetter(key);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [attemptsLeft]);
+
   return (
     <div className="keyboard">
-      <Key value="a" />
-      <Key value="b" />
-      <Key value="c" />
-      <Key value="d" />
-      <Key value="e" />
-      <Key value="f" />
-      <Key value="g" />
-      <Key value="h" />
-      <Key value="i" />
-      <Key value="j" />
-      <Key value="k" />
-      <Key value="l" />
-      <Key value="m" />
-      <Key value="n" />
-      <Key value="o" />
-      <Key value="p" />
-      <Key value="q" />
-      <Key value="r" />
-      <Key value="s" />
-      <Key value="t" />
-      <Key value="u" />
-      <Key value="v" />
-      <Key value="w" />
-      <Key value="x" />
-      <Key value="y" />
-      <Key value="z" />
+      {'abcdefghijklmnopqrstuvwxyz'.split('').map((letter) => (
+        <Key key={letter} value={letter} />
+      ))}
     </div>
   );
 }

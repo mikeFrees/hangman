@@ -1,5 +1,5 @@
 import './Key.css';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { GameContext } from '../../context/GameContext';
 
 function Key({ value }) {
@@ -7,6 +7,13 @@ function Key({ value }) {
   const [clicked, setClicked] = useState(false);
   const { attemptsLeft, guessedLetters, setGuessedLetters } =
     useContext(GameContext);
+
+  useEffect(() => {
+    if (guessedLetters.includes(value) && attemptsLeft > 0) {
+      setClicked(true);
+      setEnabled(false);
+    }
+  }, [guessedLetters]);
   return (
     <div
       className={enabled ? 'keyboard--key' : 'keyboard--key disabled'}
