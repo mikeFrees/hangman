@@ -1,11 +1,10 @@
 import './Keyboard.css';
-import Key from './key';
+import Key from './Key.jsx';
 import { useEffect, useContext } from 'react';
 import { GameContext } from '../../context/GameContext';
 
 function Keyboard() {
-  const { attemptsLeft, setGuessedLetters } =
-    useContext(GameContext);
+  const { attemptsLeft, setGuessedLetters } = useContext(GameContext);
 
   function submitLetter(letter) {
     if (attemptsLeft <= 0) return;
