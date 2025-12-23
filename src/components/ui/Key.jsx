@@ -9,6 +9,8 @@ function Key({ value }) {
     useContext(GameContext);
 
   useEffect(() => {
+    setClicked(false);
+    setEnabled(true);
     if (guessedLetters.includes(value) && attemptsLeft > 0) {
       setClicked(true);
       setEnabled(false);

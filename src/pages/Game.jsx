@@ -13,6 +13,7 @@ function Game() {
     word,
     setWord,
     setStatus,
+    status,
     attemptsLeft,
     setAttemptsLeft,
     guessedLetters,
@@ -34,7 +35,28 @@ function Game() {
       setWord(getWord());
       setNewGame(false);
     }
-  }, [category]);
+  }, [category, newGame]);
+
+  useEffect(() => {
+    if (checkWin()) {
+      setStatus('Win');
+      setMenuEnabled(true);
+    }
+    if (attemptsLeft <= 0) {
+      setStatus('Lose');
+      setMenuEnabled(true);
+    }
+  }, [guessedLetters, attemptsLeft]);
+
+  function checkWin() {
+    const guessed = new Set(guessedLetters);
+    const toGuess = new Set(word.toLowerCase().replace(/[^a-z]/g, ''));
+
+    for (const letter of toGuess) {
+      if (!guessed.has(letter)) return false;
+    }
+    return true;
+  }
 
   useEffect(() => {
     if (guessedLetters.length === 0) return;
@@ -66,6 +88,9 @@ function Game() {
   );
 
   function toggleMenu() {
+    if (status !== 'paused' && menuEnabled) {
+      setNewGame(true);
+    }
     if (!menuEnabled) {
       setMenuEnabled(true);
       setStatus('paused');

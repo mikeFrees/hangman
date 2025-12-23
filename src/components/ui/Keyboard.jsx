@@ -4,7 +4,7 @@ import { useEffect, useContext } from 'react';
 import { GameContext } from '../../context/GameContext';
 
 function Keyboard() {
-  const { attemptsLeft, setGuessedLetters } = useContext(GameContext);
+  const { attemptsLeft, setGuessedLetters} = useContext(GameContext);
 
   function submitLetter(letter) {
     if (attemptsLeft <= 0) return;
@@ -27,6 +27,7 @@ function Keyboard() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [attemptsLeft]);
+
 
   return (
     <div className="keyboard">

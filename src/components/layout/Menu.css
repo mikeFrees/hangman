@@ -1,0 +1,69 @@
+.button {
+  border: none;
+  padding: 0;
+  width: 226px;
+}
+
+.button__wide {
+  width: 275px;
+}
+
+.button__variant {
+  box-shadow: inset 0px -2px 0px 3px #140e66, inset 0px 1px 0px 6px #c642fb;
+
+  background: linear-gradient(
+    180deg,
+    rgba(254, 113, 254, 1) 0%,
+    rgba(113, 153, 255, 0.83) 100%
+  );
+}
+
+nav {
+  width: 592px;
+  height: 445px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  background: linear-gradient(
+    180deg,
+    rgba(52, 74, 186, 1) 0%,
+    rgba(0, 20, 121, 0.83) 100%
+  );
+  border-radius: 72px;
+  box-shadow: inset 0px -8px 0px 4px #140e66, inset 0px 6px 0px 8px #2463ff;
+}
+
+h1.pauseMenu {
+  position: relative;
+  top: 75px;
+  text-decoration: none;
+  line-height: 120%;
+  font-size: 134px;
+  font-weight: 400;
+  text-align: center;
+  -webkit-text-stroke: 4px #243041;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #67b6ff 0%, #fff 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 4, 58, 0.75) 0%,
+    rgba(21, 18, 120, 0.75) 70%,
+    rgba(43, 22, 119, 0.75) 100%
+  );
+}
