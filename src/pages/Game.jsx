@@ -38,7 +38,7 @@ function Game() {
   }, [category, newGame]);
 
   useEffect(() => {
-    if (checkWin()) {
+    if (word && checkWin()) {
       setStatus('Win');
       setMenuEnabled(true);
     }
